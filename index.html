@@ -15,6 +15,32 @@
         <div class="header">
             <h1>Phones</h1>
         </div>
+        <div class="menu">
+            <input
+                type="button"
+                class="ascPrice"
+                value="Цена по возрастанию"
+                onclick="ButtonClickSortByPriceAsc(phones)"
+            />
+            <input
+                type="button"
+                class="descPrice"
+                value="Цена по убыванию"
+                onclick="ButtonClickSortByPriceDesc(phones)"
+            />
+            <input
+                type="button"
+                class="ascReview"
+                value="Отзывы по возрастанию"
+                onclick="ButtonClickSortByReviewAsc(phones)"
+            />
+            <input
+                type="button"
+                class="descReview"
+                value="Отзывы по убыванию"
+                onclick="ButtonClickSortByReviewDesc(phones)"
+            />
+        </div>
         <div id="content"></div>
         <div class="footer"></div>
         <script src="./script.js"></script>

@@ -23,7 +23,6 @@
     width: 75%;
     justify-content: center;
     background-color: whitesmoke;
-    margin-top: 25px;
     margin-bottom: 25px;
 }
 .item {
@@ -60,4 +59,21 @@
 .newPrice {
     font-size: 20px;
     height: 25px;
+}
+.menu {
+    display: flex;
+    display: row;
+    justify-content: center;
+
+    width: 75%;
+    height: 100px;
+    background-color: whitesmoke;
+    margin-top: 25px;
+}
+.menu input {
+    width: 200px;
+    height: 50px;
+    margin: 15px 5px 15px 5px;
+    text-align: center;
+    /* border: 1px solid rgb(219, 209, 209); */
 }

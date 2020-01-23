@@ -180,9 +180,23 @@ function GetPriceInt(smartphone) {
         return parseInt(str);
     }
 }
+function GetReviewInt(smartphone) {
+    return parseInt(smartphone.ratingRevievs);
+}
 
-function SortPhones(arr) {
-    arr.sort((a, b) => (GetPriceInt(a) > GetPriceInt(b) ? 1 : -1));
+function SortPhonesByPrice(arr, flag = true) {
+    if (flag) {
+        arr.sort((a, b) => GetPriceInt(a) - GetPriceInt(b));
+    } else {
+        arr.sort((a, b) => GetPriceInt(b) - GetPriceInt(a));
+    }
+}
+function SortPhonesByReview(arr, flag = true) {
+    if (flag) {
+        arr.sort((a, b) => GetReviewInt(a) - GetReviewInt(b));
+    } else {
+        arr.sort((a, b) => GetReviewInt(b) - GetReviewInt(a));
+    }
 }
 
 function SetSmartphones(phones) {
@@ -232,5 +246,32 @@ function SetSmartphones(phones) {
         content.appendChild(elem);
     });
 }
-SortPhones(phones);
+function RemovePhones() {
+    let contentDiv = document.body.querySelectorAll("div.item");
+
+    contentDiv.forEach(function(element) {
+        element.remove();
+    });
+}
+function ButtonClickSortByPriceAsc(phones) {
+    RemovePhones();
+    SortPhonesByPrice(phones, true);
+    SetSmartphones(phones);
+}
+function ButtonClickSortByPriceDesc(phones) {
+    RemovePhones();
+    SortPhonesByPrice(phones, false);
+    SetSmartphones(phones);
+}
+function ButtonClickSortByReviewAsc(phones) {
+    RemovePhones();
+    SortPhonesByReview(phones, true);
+    SetSmartphones(phones);
+}
+function ButtonClickSortByReviewDesc(phones) {
+    RemovePhones();
+    SortPhonesByReview(phones, false);
+    SetSmartphones(phones);
+}
+SortPhonesByPrice(phones, true);
 SetSmartphones(phones);
